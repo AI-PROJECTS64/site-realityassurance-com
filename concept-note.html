@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Concept Note - Reality Assurance</title>
+  <meta name="description" content="Concept Note for Reality Assurance: controls, evidence, and independent assessment practices to support justified confidence in digital interactions and records in a synthetic media era." />
+
+  <link rel="canonical" href="https://www.realityassurance.com/concept-note.html" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Concept Note - Reality Assurance" />
+  <meta property="og:description" content="A vendor-neutral reference for building audit-ready, evidence-based trust in digital interactions and records in a synthetic era." />
+  <meta property="og:url" content="https://www.realityassurance.com/concept-note.html" />
+  <meta property="og:image" content="https://www.realityassurance.com/og.jpg" />
+
+  <style>
+    :root{
+      --bg:#020815;
+      --panel:#0b1630;
+      --panel2:#0a1328;
+      --text:#e9f0ff;
+      --muted:#b7c6e6;
+      --border:rgba(127,208,255,.18);
+      --border2:rgba(127,208,255,.12);
+      --accent:#7fd0ff;
+      --accent2:#9be7ff;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --radius2:26px;
+      --max:1000px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(127,208,255,.14), transparent 60%),
+        radial-gradient(700px 420px at 80% 20%, rgba(155,231,255,.10), transparent 55%),
+        radial-gradient(700px 520px at 50% 95%, rgba(127,208,255,.08), transparent 60%),
+        linear-gradient(180deg, #020815 0%, #01040b 100%);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 80px}
+    .top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom:14px;
+    }
+    .backlink{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid var(--border2);
+      background:rgba(2,8,21,.30);
+      padding:10px 12px;
+      border-radius:14px;
+      color:rgba(233,240,255,.92);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .backlink:hover{text-decoration:none; border-color:rgba(127,208,255,.30)}
+    .badge{
+      display:flex; gap:12px; align-items:center; min-width:0;
+      border:1px solid var(--border2);
+      background:rgba(10,19,40,.55);
+      padding:10px 12px;
+      border-radius:18px;
+      box-shadow:0 10px 40px rgba(0,0,0,.25);
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      border:1px solid rgba(127,208,255,.20);
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(127,208,255,.20), rgba(127,208,255,.05));
+      display:flex; align-items:center; justify-content:center;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .t1{font-weight:800; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .t2{color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .card{
+      background:linear-gradient(180deg, rgba(11,22,48,.80), rgba(10,19,40,.72));
+      border:1px solid var(--border2);
+      border-radius:var(--radius2);
+      padding:18px 18px 16px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+      margin-top:14px;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:radial-gradient(600px 240px at 15% 0%, rgba(127,208,255,.16), transparent 60%);
+      pointer-events:none;
+    }
+    .kicker{
+      color:rgba(155,231,255,.92);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      margin:0 0 8px;
+    }
+    h1{margin:0; font-size:30px; letter-spacing:-.3px}
+    h2{margin:0 0 10px; font-size:18px; letter-spacing:-.2px}
+    p{margin:0 0 10px; color:rgba(233,240,255,.92)}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0 18px; color:rgba(233,240,255,.92)}
+    li{margin:7px 0}
+    .divider{height:1px; background:rgba(127,208,255,.10); margin:14px 0}
+    .notice{
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(2,8,21,.35);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .section-tag{
+      display:inline-flex;
+      font-family:var(--mono);
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(127,208,255,.18);
+      background:rgba(2,8,21,.35);
+      color:rgba(233,240,255,.92);
+      margin-bottom:10px;
+    }
+    .footer{
+      margin-top:18px;
+      padding:16px 18px;
+      border:1px solid var(--border2);
+      border-radius:var(--radius2);
+      background:rgba(2,8,21,.30);
+      color:var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="backlink" href="/">&larr; Back to main page</a>
+      <div class="badge">
+        <div class="logo" aria-hidden="true">
+          <img src="/logo-realityassurance.png" alt="RealityAssurance logo" />
+        </div>
+        <div style="min-width:0">
+          <div class="t1">RealityAssurance.com</div>
+          <div class="t2">Concept Note (informational)</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="kicker">Concept Note</div>
+      <h1>Reality Assurance</h1>
+      <p class="muted">
+        A vendor-neutral reference for controls, evidence, and independent assessment practices that support justified confidence in digital interactions and records in a synthetic media era.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="notice">
+        <b>Disclaimer:</b> Independent informational resource. No affiliation with regulators, standards bodies, certification authorities, or vendors.
+        No services are offered. No legal, compliance, audit, or security advice. No insurance activity. No warranties.
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">1. Purpose</div>
+      <h2>Why this concept note exists</h2>
+      <p>
+        RealityAssurance.com documents an emerging institutional category designed to be readable by policy teams, risk leaders, auditors, and technical stakeholders.
+        It maps vocabulary, controls, evidence types, and assessment patterns used to become audit-ready in environments where synthetic content is common.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">2. The environment shift</div>
+      <h2>Synthetic by default</h2>
+      <p>
+        Digital systems are entering a phase where authenticity cannot be assumed. Images, audio, video, documents, and even sensor feeds can be generated, altered, or replayed at scale.
+        The cost of being wrong increases sharply in regulated industries, security contexts, and public-interest information flows.
+      </p>
+      <p class="muted">
+        The goal is not to claim perfect certainty. The goal is to define what evidence is available, what it supports, and how confidence is justified within a defined scope and threat model.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">3. Working definition</div>
+      <h2>Reality Assurance (canonical definition)</h2>
+      <p>
+        <b>Reality Assurance</b> is the set of controls, evidence, and independent assessment practices that provide justified confidence that a digital interaction or record reflects an authorized real-world event,
+        within a defined scope and threat model.
+      </p>
+      <div class="divider"></div>
+      <p class="muted">
+        “Assurance” is used in the institutional security sense: measurable confidence that security features and practices enforce policy as intended.
+        It is not used here to describe an insurance product or activity.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">4. Scope</div>
+      <h2>What Reality Assurance covers</h2>
+      <ul>
+        <li><b>Evidence-grade media and documents:</b> records used in claims, investigations, compliance, and high-stakes decisioning.</li>
+        <li><b>Identity and authorization signals:</b> who acted, who approved, who authored, under which controls.</li>
+        <li><b>Measurement integrity:</b> sensor feeds and telemetry that influence operational or public outcomes.</li>
+        <li><b>Agentic workflows:</b> inputs, outputs, logs, tool calls, and decision traces that must be reviewable post-incident.</li>
+      </ul>
+      <div class="divider"></div>
+      <p class="muted">
+        Reality Assurance is broader than content authenticity alone. It connects technical evidence to governance evidence that can survive audit, dispute, and third-party review.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">5. Market drivers</div>
+      <h2>Why institutions are converging on traceability</h2>
+      <ul>
+        <li><b>Transparency obligations and implementation guidance</b> for AI-generated and manipulated content, including marking and labelling initiatives.</li>
+        <li><b>Standardization and deployment of provenance</b> (Content Credentials / C2PA) across platforms and infrastructure.</li>
+        <li><b>Growth of third-party AI assurance markets</b> with published government roadmaps and evolving assessment models.</li>
+        <li><b>Rising liability and reputational exposure</b> that shifts “trust” from narratives to evidence.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">6. Architecture</div>
+      <h2>From signals to governance decisions</h2>
+      <p class="muted">Reality Assurance sits above provenance components and below risk decisions:</p>
+      <ol class="muted" style="margin:10px 0 0 18px;">
+        <li><b>Signals layer:</b> marking, content credentials, signatures, device identity.</li>
+        <li><b>Verification layer:</b> repeatable checks, trust lists, audit logs.</li>
+        <li><b>Assurance layer:</b> assurance cases, independent assessment, control evidence.</li>
+        <li><b>Decision layer:</b> compliance readiness, contractual acceptance, risk governance.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">7. The four pillars</div>
+      <h2>Practical building blocks</h2>
+      <ol class="muted" style="margin:10px 0 0 18px;">
+        <li><b>Marking and disclosure:</b> human- and machine-readable signals that support transparency and detection.</li>
+        <li><b>Provenance and cryptographic binding:</b> structured claims bound to assets via signatures and manifests.</li>
+        <li><b>Verification and independent assessment:</b> repeatable verification procedures and third-party evaluation models.</li>
+        <li><b>Assurance cases and governance evidence:</b> structured argumentation and evidence artifacts for acceptable risk.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">8. What this site will not do</div>
+      <h2>Non-goals</h2>
+      <ul>
+        <li>No certification or conformance declarations.</li>
+        <li>No legal advice, compliance advice, or security advice.</li>
+        <li>No insurance products, no underwriting, no coverage offers.</li>
+        <li>No claims of official status, authority, or affiliation.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">9. References</div>
+      <h2>Primary references and signals</h2>
+      <ul>
+        <li><a href="https://csrc.nist.gov/glossary/term/security_assurance" target="_blank" rel="noopener">NIST CSRC - Security assurance (glossary)</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" target="_blank" rel="noopener">European Commission - Code of Practice on marking and labelling of AI-generated content</a></li>
+        <li><a href="https://www.gov.uk/government/publications/trusted-third-party-ai-assurance-roadmap/trusted-third-party-ai-assurance-roadmap" target="_blank" rel="noopener">UK DSIT - Trusted third-party AI assurance roadmap</a></li>
+        <li><a href="https://c2pa.org/specifications/specifications/2.3/specs/C2PA_Specification.html" target="_blank" rel="noopener">C2PA - Content Credentials technical specification</a></li>
+        <li><a href="https://www.ft.com/content/fe49f3d8-5847-481c-90a4-85a16fef7958" target="_blank" rel="noopener">Financial Times - AI audit standard and assurance market dynamics</a></li>
+        <li><a href="https://www.theverge.com/news/604989/cloudflare-adobe-content-credentials-authenticty-feature" target="_blank" rel="noopener">The Verge - infrastructure deployment signal (Content Credentials)</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-tag">10. Stewardship and inquiries</div>
+      <h2>Stewardship and acquisition</h2>
+      <p class="muted">
+        For stewardship discussions, research collaboration, or acquisition inquiries:
+        <a href="mailto:contact@realityassurance.com?subject=RealityAssurance.com%20-%20Concept%20Note%20Inquiry">contact@realityassurance.com</a>
+      </p>
+      <div class="divider"></div>
+      <p class="muted">
+        RealityAssurance.com may be available for institutional partnership or acquisition by qualified entities.
+      </p>
+    </section>
+
+    <div class="footer">
+      <b>Disclaimer:</b> Independent informational resource. No affiliation with regulators, standards bodies, certification authorities, or vendors.
+      No services are offered. No legal, compliance, audit, or security advice. No insurance activity. No warranties.
+    </div>
+  </div>
+</body>
+</html>
