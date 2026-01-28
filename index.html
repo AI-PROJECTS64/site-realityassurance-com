@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Reality Assurance - Audit-ready trust for the synthetic era</title>
+  <meta name="description" content="Reality Assurance is a vendor-neutral reference for controls, evidence, and independent assessment that help organizations trust digital interactions in a synthetic media era." />
+
+  <link rel="canonical" href="https://www.realityassurance.com/" />
+  <link rel="alternate" hreflang="en" href="https://www.realityassurance.com/" />
+  <link rel="alternate" hreflang="fr" href="https://www.realityassurance.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.realityassurance.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reality Assurance - Audit-ready trust for the synthetic era" />
+  <meta property="og:description" content="Vendor-neutral reference for controls, evidence, and independent assessment to support justified confidence in digital interactions when synthetic content becomes ubiquitous." />
+  <meta property="og:url" content="https://www.realityassurance.com/" />
+  <meta property="og:image" content="https://www.realityassurance.com/og.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reality Assurance - Audit-ready trust for the synthetic era" />
+  <meta name="twitter:description" content="Vendor-neutral reference for controls, evidence, and independent assessment to support justified confidence in digital interactions in a synthetic era." />
+  <meta name="twitter:image" content="https://www.realityassurance.com/og.jpg" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preload" as="image" href="/logo-realityassurance.png" />
+  <link rel="preload" as="image" href="/og.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RealityAssurance.com",
+    "url": "https://www.realityassurance.com/",
+    "description": "Reality Assurance is a vendor-neutral reference for controls, evidence, and independent assessment that support justified confidence in digital interactions and records in a synthetic media era.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "RealityAssurance.com",
+      "url": "https://www.realityassurance.com/"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#020815;
+      --panel:#0b1630;
+      --panel2:#0a1328;
+      --text:#e9f0ff;
+      --muted:#b7c6e6;
+      --border:rgba(127,208,255,.18);
+      --border2:rgba(127,208,255,.12);
+      --accent:#7fd0ff;
+      --accent2:#9be7ff;
+      --danger:#ff6b6b;
+      --ok:#7CFFB2;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --radius2:26px;
+      --max:1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(127,208,255,.14), transparent 60%),
+        radial-gradient(700px 420px at 80% 20%, rgba(155,231,255,.10), transparent 55%),
+        radial-gradient(700px 520px at 50% 95%, rgba(127,208,255,.08), transparent 60%),
+        linear-gradient(180deg, #020815 0%, #01040b 100%);
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 18px 80px}
+    .topbar{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding:14px 16px;
+      border:1px solid var(--border2);
+      background:rgba(10,19,40,.55);
+      border-radius:var(--radius);
+      box-shadow:0 10px 40px rgba(0,0,0,.35);
+      position:sticky; top:12px; backdrop-filter: blur(10px);
+      z-index:10;
+    }
+    .badge{display:flex; gap:12px; align-items:center; min-width:0}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background:linear-gradient(180deg, rgba(127,208,255,.20), rgba(127,208,255,.05));
+      border:1px solid rgba(127,208,255,.20);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .t1{font-weight:700; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .t2{color:var(--muted); font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .controls{display:flex; gap:8px; align-items:center}
+    .lang{
+      display:flex; gap:6px; align-items:center;
+      border:1px solid var(--border2);
+      background:rgba(2,8,21,.35);
+      padding:6px;
+      border-radius:14px;
+    }
+    .btn{
+      border:1px solid rgba(127,208,255,.25);
+      background:linear-gradient(180deg, rgba(127,208,255,.14), rgba(127,208,255,.06));
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      font-weight:650;
+      cursor:pointer;
+      display:inline-flex; gap:10px; align-items:center;
+      box-shadow:0 10px 28px rgba(0,0,0,.35);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      text-decoration:none;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(127,208,255,.40); text-decoration:none}
+    .btn:active{transform:translateY(0)}
+    .btnGhost{
+      border:1px solid var(--border2);
+      background:rgba(10,19,40,.35);
+      box-shadow:none;
+      font-weight:600;
+    }
+    .btnSmall{
+      padding:8px 10px; border-radius:12px; font-weight:700;
+      font-size:12px;
+    }
+    .lang button{
+      border:0; background:transparent; color:var(--muted);
+      padding:8px 10px; border-radius:10px; cursor:pointer;
+      font-weight:800; letter-spacing:.4px; font-size:12px;
+    }
+    .lang button.active{
+      color:var(--bg);
+      background:linear-gradient(180deg, rgba(127,208,255,1), rgba(155,231,255,1));
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1.2fr .8fr}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(11,22,48,.80), rgba(10,19,40,.72));
+      border:1px solid var(--border2);
+      border-radius:var(--radius2);
+      padding:18px 18px 16px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:radial-gradient(600px 240px at 15% 0%, rgba(127,208,255,.16), transparent 60%);
+      pointer-events:none;
+    }
+    .hero{padding:24px 22px 18px}
+    h1{
+      margin:0;
+      font-size:34px;
+      letter-spacing:-.3px;
+    }
+    .subtitle{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:15px;
+      max-width:70ch;
+    }
+    .notice{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(2,8,21,.35);
+      margin:14px 0 14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .notice b{color:var(--text)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 10px}
+    .chip{
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,240,255,.92);
+      border:1px solid rgba(127,208,255,.20);
+      background:rgba(2,8,21,.35);
+      padding:7px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .kicker{
+      color:rgba(155,231,255,.92);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      margin:0 0 8px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    p{margin:0 0 10px; color:rgba(233,240,255,.92)}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0 18px; color:rgba(233,240,255,.92)}
+    li{margin:7px 0; color:rgba(233,240,255,.92)}
+    .divider{
+      height:1px; background:rgba(127,208,255,.10);
+      margin:14px 0;
+    }
+    .small{font-size:12px; color:var(--muted)}
+    .twoCol{
+      display:grid; gap:12px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 860px){
+      .twoCol{grid-template-columns: 1fr 1fr}
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:14px;
+      border:1px solid rgba(127,208,255,.18);
+      background:rgba(2,8,21,.35);
+      color:rgba(233,240,255,.92);
+      font-weight:650;
+      font-size:13px;
+      text-decoration:none;
+    }
+    .pill:hover{text-decoration:none; border-color:rgba(127,208,255,.35)}
+    .footer{
+      margin-top:18px;
+      padding:16px 18px;
+      border:1px solid var(--border2);
+      border-radius:var(--radius2);
+      background:rgba(2,8,21,.30);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .hidden{display:none !important}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="badge">
+        <div class="logo" aria-hidden="true">
+          <img src="/logo-realityassurance.png" alt="RealityAssurance logo" />
+        </div>
+        <div style="min-width:0">
+          <div class="t1">RealityAssurance.com</div>
+          <div class="t2">Digital asset available for acquisition by qualified entities</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="lang" aria-label="Language selector">
+          <button id="btnEN" class="active" type="button">EN</button>
+          <button id="btnFR" type="button">FR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EN CONTENT -->
+    <div id="contentEN">
+      <div class="grid">
+        <section class="card hero">
+          <div class="kicker">Category reference</div>
+          <h1>RealityAssurance.com</h1>
+          <p class="subtitle">
+            Reality Assurance - a vendor-neutral reference for building justified confidence in digital interactions and records when synthetic content becomes ubiquitous.
+          </p>
+
+          <div class="notice">
+            <div aria-hidden="true">●</div>
+            <div>
+              <b>Important:</b> “Assurance” is used in the institutional security sense (measurable confidence that controls work as intended), not as an insurance activity.
+              This site does not sell insurance, does not certify products, and does not provide legal, compliance, or security advice.
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Vendor-neutral</span>
+            <span class="chip">Audit-ready evidence</span>
+            <span class="chip">Marking and disclosure</span>
+            <span class="chip">Provenance and signatures</span>
+            <span class="chip">Independent assessment</span>
+            <span class="chip">Assurance cases</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="mailto:contact@realityassurance.com?subject=RealityAssurance.com%20-%20Inquiry">
+              Contact
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btnGhost" href="/concept-note.html">Read the Concept Note</a>
+            <a class="btn btnGhost" href="/Acquisition%20Brief%20realityassurance-EN-202511.pdf" target="_blank" rel="noopener">Download Brief (EN)</a>
+            <a class="btn btnGhost" href="/Acquisition%20Brief%20realityassurance-202511.pdf" target="_blank" rel="noopener">Download Brief (FR)</a>
+            <a class="btn btnGhost" href="#value-en">Why this category name?</a>
+            <a class="btn btnGhost" href="https://www.linkedin.com/company/realityassurance/" target="_blank" rel="noopener">LinkedIn page</a>
+          </div>
+
+          <div class="divider"></div>
+          <p class="small">
+            RealityAssurance.com may be available for institutional partnership or acquisition by qualified entities. This page is informational and vendor-neutral.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="kicker" id="value-en">Definition</div>
+          <h2>What “Reality Assurance” means</h2>
+          <p>
+            Reality Assurance is the set of controls, evidence, and independent assessment practices that provide justified confidence that a digital interaction or record reflects an authorized real-world event,
+            within a defined scope and threat model.
+          </p>
+          <p class="muted">
+            In security language, “assurance” refers to a measurable level of confidence that controls work as intended, not to the sale of insurance products.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="kicker">Scope</div>
+          <h2>What it covers</h2>
+          <ul>
+            <li><b>Media and documents</b> used as evidence (claims, investigations, compliance records).</li>
+            <li><b>Identity and presence signals</b> (who acted, who approved, who authored).</li>
+            <li><b>Sensor and measurement feeds</b> (industrial, climate, security contexts).</li>
+            <li><b>Agentic workflows</b> (inputs, outputs, logs, and decision traces).</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="kicker">The four pillars</div>
+          <h2>How Reality Assurance is built</h2>
+          <ol class="muted" style="margin:10px 0 0 18px;">
+            <li><b>Marking and disclosure</b> (human- and machine-readable signals).</li>
+            <li><b>Provenance and cryptographic binding</b> (claims, signatures, manifests).</li>
+            <li><b>Verification and independent assessment</b> (repeatable checks, third-party evaluation).</li>
+            <li><b>Assurance cases and governance evidence</b> (structured argument + evidence for acceptable risk).</li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="kicker">Why now</div>
+        <h2>Why this category is forming now</h2>
+        <p>
+          By 2030, organizations will operate in an environment where images, audio, video, documents, and even sensor feeds can be generated or altered at scale.
+          The core challenge is no longer content quality, but whether a signal can be relied upon for decisions, compliance, and liability.
+        </p>
+        <p>
+          Regulatory and standards efforts are converging on traceability for AI-generated and manipulated content, including transparency obligations and implementation guidance.
+          Provenance standards such as Content Credentials (C2PA) are being implemented across platforms, making verifiable provenance operational at scale.
+          Governments are also explicitly pushing for trusted third-party AI assurance markets and assessment models, accelerating procurement language around assurance.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="twoCol">
+          <div>
+            <div class="kicker">What this site is</div>
+            <h2>Neutral reference</h2>
+            <p class="muted">
+              This website is an informational resource mapping concepts, terminology, and building blocks used to become audit-ready. It does not certify products, define an official standard, or provide services.
+            </p>
+          </div>
+          <div>
+            <div class="kicker">What this site is not</div>
+            <h2>Not insurance, not certification</h2>
+            <p class="muted">
+              No underwriting, no coverage offers, no insurance brokerage. No legal advice. No claims of affiliation with regulators, standards bodies, or vendors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="kicker" id="refs-en">Primary references</div>
+        <h2>Institutional and standards sources</h2>
+        <ul>
+          <li><a href="https://csrc.nist.gov/glossary/term/security_assurance" target="_blank" rel="noopener">NIST CSRC - “Security assurance” (glossary definition)</a></li>
+          <li><a href="https://www.gov.uk/government/publications/trusted-third-party-ai-assurance-roadmap/trusted-third-party-ai-assurance-roadmap" target="_blank" rel="noopener">UK DSIT - Trusted third-party AI assurance roadmap</a></li>
+          <li><a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" target="_blank" rel="noopener">European Commission - Code of Practice on marking and labelling of AI-generated content</a></li>
+          <li><a href="https://c2pa.org/specifications/specifications/2.3/specs/C2PA_Specification.html" target="_blank" rel="noopener">C2PA - Content Credentials technical specification</a></li>
+          <li><a href="https://www.ft.com/content/fe49f3d8-5847-481c-90a4-85a16fef7958" target="_blank" rel="noopener">Financial Times - AI audit standard and assurance market dynamics</a></li>
+          <li><a href="https://www.theverge.com/news/604989/cloudflare-adobe-content-credentials-authenticty-feature" target="_blank" rel="noopener">The Verge - Operational deployment signal: Content Credentials in infrastructure</a></li>
+        </ul>
+        <div class="divider"></div>
+        <p class="small">
+          References are provided for context and traceability. This site is descriptive, not prescriptive, and does not define an official standard.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="kicker" id="offer-en">Stewardship</div>
+        <h2>Stewardship and acquisition inquiries</h2>
+        <p class="muted">
+          RealityAssurance.com is maintained as a category-grade reference. For stewardship discussions, research collaboration, or acquisition inquiries:
+          <a href="mailto:contact@realityassurance.com?subject=RealityAssurance.com%20-%20Stewardship%20or%20Acquisition">contact@realityassurance.com</a>
+        </p>
+        <div class="divider"></div>
+        <p class="small">
+          Independent informational resource. No affiliation with regulators, standards bodies, certification authorities, or vendors. No services are offered.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="kicker">Related category assets</div>
+        <h2>Neighboring banners in the governance and evidence landscape</h2>
+        <p class="muted">Reality Assurance sits alongside adjacent category assets that frame infrastructure governance, integrity, and accountability.</p>
+        <div class="chips">
+          <a class="pill" href="https://www.computesovereignty.com" target="_blank" rel="noopener">ComputeSovereignty.com</a>
+          <a class="pill" href="https://www.computeintegrity.com" target="_blank" rel="noopener">ComputeIntegrity.com</a>
+          <a class="pill" href="https://www.signedresponse.com" target="_blank" rel="noopener">SignedResponse.com</a>
+          <a class="pill" href="https://www.modelsovereignty.com" target="_blank" rel="noopener">ModelSovereignty.com</a>
+          <a class="pill" href="https://www.globalriskarchitecture.com" target="_blank" rel="noopener">GlobalRiskArchitecture.com</a>
+          <a class="pill" href="https://www.systemiccyberrisk.com" target="_blank" rel="noopener">SystemicCyberRisk.com</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- FR CONTENT -->
+    <div id="contentFR" class="hidden">
+      <div class="grid">
+        <section class="card hero">
+          <div class="kicker">Référentiel de catégorie</div>
+          <h1>RealityAssurance.com</h1>
+          <p class="subtitle">
+            Reality Assurance - un référentiel neutre (sans fournisseur) pour construire une confiance justifiable dans les interactions et traces numériques quand le synthétique devient omniprésent.
+          </p>
+
+          <div class="notice">
+            <div aria-hidden="true">●</div>
+            <div>
+              <b>Important:</b> “Assurance” est utilisé au sens institutionnel sécurité (niveau mesurable de confiance que des contrôles fonctionnent comme prévu), et non au sens d’une activité d’assurance/insurance.
+              Ce site ne vend pas d’assurance, ne certifie rien, et ne fournit aucun conseil juridique, conformité ou sécurité.
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Neutre et multi-acteurs</span>
+            <span class="chip">Preuve “audit-ready”</span>
+            <span class="chip">Marquage et disclosure</span>
+            <span class="chip">Provenance et signatures</span>
+            <span class="chip">Évaluation indépendante</span>
+            <span class="chip">Assurance cases</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="mailto:contact@realityassurance.com?subject=RealityAssurance.com%20-%20Demande">
+              Contact
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btnGhost" href="/concept-note.html">Lire la Concept Note</a>
+            <a class="btn btnGhost" href="/Acquisition%20Brief%20realityassurance-EN-202511.pdf" target="_blank" rel="noopener">Brief (EN)</a>
+            <a class="btn btnGhost" href="/Acquisition%20Brief%20realityassurance-202511.pdf" target="_blank" rel="noopener">Brief (FR)</a>
+            <a class="btn btnGhost" href="#value-fr">Pourquoi ce nom ?</a>
+            <a class="btn btnGhost" href="https://www.linkedin.com/company/realityassurance/" target="_blank" rel="noopener">Page LinkedIn</a>
+          </div>
+
+          <div class="divider"></div>
+          <p class="small">
+            RealityAssurance.com peut être disponible pour partenariat institutionnel ou acquisition par des entités qualifiées. Page informative, neutre et sans offre de service.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="kicker" id="value-fr">Définition</div>
+          <h2>Ce que signifie “Reality Assurance”</h2>
+          <p>
+            Reality Assurance est l’ensemble des contrôles, des preuves et des pratiques d’évaluation indépendante qui fournissent un niveau de confiance justifiable
+            qu’une interaction ou un enregistrement numérique reflète un événement réel autorisé, dans un périmètre et un modèle de menace définis.
+          </p>
+          <p class="muted">
+            En sécurité, “assurance” désigne un niveau mesurable de confiance dans l’efficacité des contrôles, et non la vente d’un produit d’assurance.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="kicker">Périmètre</div>
+          <h2>Ce que cela couvre</h2>
+          <ul>
+            <li><b>Médias et documents</b> utilisés comme preuves (dossiers, enquêtes, conformité).</li>
+            <li><b>Signaux d’identité et de présence</b> (qui a agi, qui a approuvé, qui a produit).</li>
+            <li><b>Capteurs et mesures</b> (industriel, climat, sécurité).</li>
+            <li><b>Workflows agentiques</b> (entrées, sorties, journaux, traces de décision).</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="kicker">Les 4 piliers</div>
+          <h2>Comment construire la Reality Assurance</h2>
+          <ol class="muted" style="margin:10px 0 0 18px;">
+            <li><b>Marquage et disclosure</b> (signaux lisibles humain et machine).</li>
+            <li><b>Provenance et lien cryptographique</b> (claims, signatures, manifests).</li>
+            <li><b>Vérification et évaluation indépendante</b> (contrôles répétables, tierce partie).</li>
+            <li><b>Assurance cases et preuves de gouvernance</b> (argument structuré + preuves acceptables).</li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="kicker">Pourquoi maintenant</div>
+        <h2>Pourquoi cette catégorie se forme</h2>
+        <p>
+          D’ici 2030, les organisations opéreront dans un environnement où images, audio, vidéo, documents et même flux capteurs peuvent être générés ou modifiés à grande échelle.
+          Le sujet n’est plus la qualité du contenu, mais la fiabilité d’un signal pour décider, se conformer et gérer la responsabilité.
+        </p>
+        <p>
+          Les dynamiques réglementaires et de standardisation convergent vers la traçabilité des contenus générés ou manipulés.
+          Des standards de provenance comme Content Credentials (C2PA) rendent la provenance vérifiable exploitable à grande échelle.
+          Des gouvernements structurent aussi explicitement un marché “trusted third-party AI assurance”, rendant “assurance” un terme d’achats et de gouvernance.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="twoCol">
+          <div>
+            <div class="kicker">Ce que c’est</div>
+            <h2>Référentiel neutre</h2>
+            <p class="muted">
+              Ressource informative cartographiant vocabulaire, concepts et briques utiles pour être “audit-ready”. Pas de certification. Pas de standard officiel défini ici. Pas de service.
+            </p>
+          </div>
+          <div>
+            <div class="kicker">Ce que ce n’est pas</div>
+            <h2>Ni assurance/insurance, ni certification</h2>
+            <p class="muted">
+              Aucun underwriting, aucune offre de couverture, aucun courtage. Aucun conseil juridique. Aucune affiliation revendiquée avec régulateurs, organismes de standardisation ou fournisseurs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="kicker">Références primaires</div>
+        <h2>Sources institutionnelles et standards</h2>
+        <ul>
+          <li><a href="https://csrc.nist.gov/glossary/term/security_assurance" target="_blank" rel="noopener">NIST CSRC - “Security assurance” (définition)</a></li>
+          <li><a href="https://www.gov.uk/government/publications/trusted-third-party-ai-assurance-roadmap/trusted-third-party-ai-assurance-roadmap" target="_blank" rel="noopener">UK DSIT - Trusted third-party AI assurance roadmap</a></li>
+          <li><a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" target="_blank" rel="noopener">Commission européenne - Code of Practice (marking and labelling)</a></li>
+          <li><a href="https://c2pa.org/specifications/specifications/2.3/specs/C2PA_Specification.html" target="_blank" rel="noopener">C2PA - Spécification Content Credentials</a></li>
+          <li><a href="https://www.ft.com/content/fe49f3d8-5847-481c-90a4-85a16fef7958" target="_blank" rel="noopener">Financial Times - dynamique marché audit IA</a></li>
+          <li><a href="https://www.theverge.com/news/604989/cloudflare-adobe-content-credentials-authenticty-feature" target="_blank" rel="noopener">The Verge - signal de déploiement (Content Credentials)</a></li>
+        </ul>
+        <div class="divider"></div>
+        <p class="small">
+          Références fournies à titre de traçabilité. Site descriptif, non prescriptif. Aucun standard officiel n’est défini ici.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="kicker">Gouvernance</div>
+        <h2>Stewardship et demandes d’acquisition</h2>
+        <p class="muted">
+          RealityAssurance.com est maintenu comme bannière de catégorie. Pour discussions de stewardship, collaboration recherche, ou demandes d’acquisition:
+          <a href="mailto:contact@realityassurance.com?subject=RealityAssurance.com%20-%20Stewardship%20ou%20Acquisition">contact@realityassurance.com</a>
+        </p>
+        <div class="divider"></div>
+        <p class="small">
+          Ressource indépendante d’information. Aucune affiliation à des régulateurs, organismes de standardisation, autorités de certification ou fournisseurs. Aucun service n’est proposé.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="kicker">Actifs connexes</div>
+        <h2>Autres bannières proches</h2>
+        <p class="muted">Reality Assurance s’inscrit dans un paysage plus large de gouvernance, intégrité et accountability.</p>
+        <div class="chips">
+          <a class="pill" href="https://www.computesovereignty.com" target="_blank" rel="noopener">ComputeSovereignty.com</a>
+          <a class="pill" href="https://www.computeintegrity.com" target="_blank" rel="noopener">ComputeIntegrity.com</a>
+          <a class="pill" href="https://www.signedresponse.com" target="_blank" rel="noopener">SignedResponse.com</a>
+          <a class="pill" href="https://www.modelsovereignty.com" target="_blank" rel="noopener">ModelSovereignty.com</a>
+          <a class="pill" href="https://www.globalriskarchitecture.com" target="_blank" rel="noopener">GlobalRiskArchitecture.com</a>
+          <a class="pill" href="https://www.systemiccyberrisk.com" target="_blank" rel="noopener">SystemicCyberRisk.com</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer">
+      <b>Disclaimer:</b> Independent informational resource. No affiliation with regulators, standards bodies, certification authorities, or vendors.
+      No services are offered. No legal, compliance, audit, or security advice. No insurance activity. No warranties.
+    </div>
+  </div>
+
+  <script>
+    const btnEN = document.getElementById("btnEN");
+    const btnFR = document.getElementById("btnFR");
+    const contentEN = document.getElementById("contentEN");
+    const contentFR = document.getElementById("contentFR");
+
+    function setLang(lang){
+      const isEN = lang === "en";
+      contentEN.classList.toggle("hidden", !isEN);
+      contentFR.classList.toggle("hidden", isEN);
+      btnEN.classList.toggle("active", isEN);
+      btnFR.classList.toggle("active", !isEN);
+      localStorage.setItem("lang", lang);
+      document.documentElement.lang = isEN ? "en" : "fr";
+    }
+
+    btnEN.addEventListener("click", () => setLang("en"));
+    btnFR.addEventListener("click", () => setLang("fr"));
+
+    const saved = localStorage.getItem("lang");
+    setLang(saved === "fr" ? "fr" : "en");
+  </script>
+</body>
+</html>
